@@ -1,6 +1,8 @@
 var expression = "AB * CD = EFGH";
 
 function createTable(tableData) {
+  
+
   var table = document.createElement('table');
   //add class truth_table to table
   table.classList.add("truth_table");
@@ -55,6 +57,29 @@ function createTable(tableData) {
   div.appendChild(table);
   //if any table already exists, remove it
   
+}
+
+function enterExpressions(expressionData){
+  //for every string in the list add it to the div with id expression_list
+  var expressionList = document.getElementById("expressionDiv");
+  
+  //check if it has a child div with class expression, if so remove it
+  if(document.getElementsByClassName("expressionText").length > 0){
+    document.getElementsByClassName("expressionText")[0].remove();
+  }
+
+
+  //create a child div with class expression 
+  var expressionDiv = document.createElement("div");
+  expressionDiv.classList.add("expressionText");
+
+  //now add all the expressions to the div
+  for(var i = 0; i < expressionData.length; i++){
+    var expression = document.createElement("p");
+    expression.appendChild(document.createTextNode(expressionData[i]));
+    expressionDiv.appendChild(expression);
+  }
+  expressionList.appendChild(expressionDiv);
 }
 
 function evaluateExpression(expression){
@@ -186,7 +211,7 @@ function evaluateExpression(expression){
     return truthTableBinary;
   }
 
-  function firstKmapGenerator(binTruthTable){
+  function booleanSolver(binTruthTable){
     var inputLetters = [];
     var outputLetters = [];
     
@@ -249,6 +274,7 @@ function evaluateExpression(expression){
         }
 
         var temp = []; //? Reseting temp
+        var tempDupCheck = [];
 
         //? Check neighbouring bits
         
@@ -281,8 +307,8 @@ function evaluateExpression(expression){
 
                     var tempArr = map[i][j].slice();
                     tempArr[index] = "-";
-
-                    if (temp.indexOf(tempArr) == -1){
+                    if (tempDupCheck.indexOf(tempArr.join("")) == -1){
+                      tempDupCheck.push(tempArr.join(""));
                       temp.push(tempArr);
                     }
                   }
@@ -304,6 +330,9 @@ function evaluateExpression(expression){
 
       }
 
+      //ERROR: NEED TO REMOVE DUPLICATES
+
+      //? Converting to an equation
       var finalEquation = "";
       finalEquation += outputLetter + " = ";
 
@@ -321,16 +350,21 @@ function evaluateExpression(expression){
           finalEquation += temp + " + ";
         }
       }
+      finalEquation = finalEquation.slice(0,-3);
+      finalEquations.push(finalEquation);
+
 
     }
     
+    return finalEquations;
 
 
 
   }
 
   var binaryTruthTableGenerator_ = binaryTruthTableGenerator(inputArray,outputArray);
-  firstKmapGenerator(binaryTruthTableGenerator_);
+  var finalEquations = booleanSolver(binaryTruthTableGenerator_);
+  enterExpressions(finalEquations);
   createTable(binaryTruthTableGenerator_);
 
 

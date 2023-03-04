@@ -1,22 +1,26 @@
 <html>
     <head>
     <title>Amara's KMAP</title>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="flexbox">
-        <div class="flexitem" id="tablediv">
+        <!-- <div class="spacer"></div> -->
+        
+        <div class="flexitem expression" id="expressionDiv">
             <div class="flexitem" >
                 <form  onsubmit="return false;">
                     <input id="expression" type="text" name="text" class="input" placeholder="AB * CD = EFGH">
-                    <button type="submit" class="button" value="submit" onclick="validate()">Submit</button>
-                  </form>
+                    <button type="submit" class="button" value="submit" onclick="validate()">Evaluate</button>
+                </form>
             </div>
             
-
+            
         </div>
-        <div class="flexitem" id="tablediv3"></div>
-        <div class="flexitem" id="tablediv3"></div>
+        <div class="table" id="tablediv"></div>
+        
+        <!-- <div class="spacer"></div> -->
+        
     </div>
     
 </body>

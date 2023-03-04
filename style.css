@@ -5,6 +5,10 @@ div.flexbox {
   justify-content: center;
   align-items: center;
   align-content: center;
+  overflow: auto;
+  height: 100%;
+
+  
 
 }
 div.flexitem {
@@ -15,6 +19,29 @@ div.flexitem {
   justify-content: center;
   align-items: center;
   align-content: center;
+  /* vertical-align: top; */
+  /* margin-top: 1rem; */
+}
+
+div.expression {
+  align-items: top;
+  flex: 1;
+}
+
+div.table {
+  /* height: 100%; */
+  min-height: 10%;
+  max-height: 100%;
+  overflow: auto;
+  flex: 1;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+div.spacer {
+  flex: 1;
 }
 
 table.truth_table {
@@ -25,15 +52,18 @@ table.truth_table {
   text-align: left;
   box-sizing: border-box;
   border-collapse: collapse;
-  /* width: 100%; */
-  margin-bottom: 1rem;
+  overflow: auto;
+  height: 100%;
   background-color: transparent;
 }
 
-table.truth_table thead th {
+table.truth_table th {
   font-size: 1rem;
   line-height: 1.5;
   color: #212529;
+  background-color: #e9ecef;
+
+
   border-collapse: collapse;
   box-sizing: border-box;
   text-align: inherit;
@@ -41,6 +71,10 @@ table.truth_table thead th {
   border-top: 1px solid #dee2e6;
   vertical-align: bottom;
   border-bottom: 2px solid #dee2e6;
+
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 table.truth_table td {
@@ -58,6 +92,10 @@ table.truth_table td {
 
 table.truth_table tbody tr:nth-of-type(odd) {
   background-color: rgba(0, 0, 0, .05);
+}
+
+table.truth_table tbody tr{
+  height: 10;
 }
 
 
@@ -92,3 +130,5 @@ table.truth_table tbody tr:nth-of-type(odd) {
   background: transparent;
   max-width: 190px;
  }
+
+ 
