@@ -19,8 +19,20 @@ div.flexitem {
   justify-content: center;
   align-items: center;
   align-content: center;
-  /* vertical-align: top; */
   /* margin-top: 1rem; */
+}
+
+hr {
+  width: 100%;
+  height: 1px;
+  
+  border: none;
+  margin: 0;
+  padding: 25px;
+}
+
+div.paragraph{
+  text-align: center;
 }
 
 div.expression {
@@ -60,17 +72,17 @@ table.truth_table {
 table.truth_table th {
   font-size: 1rem;
   line-height: 1.5;
-  color: #212529;
-  background-color: #e9ecef;
+  color: #ffffff;
+  background-color: #1F2739;
 
 
   border-collapse: collapse;
   box-sizing: border-box;
   text-align: inherit;
   padding: .75rem;
-  border-top: 1px solid #dee2e6;
+  border-top: 1px solid #000000;
   vertical-align: bottom;
-  border-bottom: 2px solid #dee2e6;
+  /* border-bottom: 2px solid #dee2e6; */
 
   position: -webkit-sticky;
   position: sticky;
@@ -81,31 +93,26 @@ table.truth_table td {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #212529;
+  color: #ffffff;
   text-align: left;
   border-collapse: collapse;
   box-sizing: border-box;
   padding: .75rem;
   vertical-align: top;
-  border-top: 1px solid #dee2e6;
+  /* border-top: 1px solid #dee2e6; */
 }
 
 table.truth_table tbody tr:nth-of-type(odd) {
-  background-color: rgba(0, 0, 0, .05);
+  background-color: #323C50;
+}
+
+table.truth_table tbody tr:nth-of-type(even) {
+  background-color: #2C3446;
 }
 
 table.truth_table tbody tr{
   height: 10;
 }
-
-
-
-
-
-
-
-
-
 
 /* ----------- Non table related styles */
 
@@ -131,4 +138,18 @@ table.truth_table tbody tr{
   max-width: 190px;
  }
 
- 
+/* Body Color */
+
+body {
+  background: #212534;
+}
+
+/* Text Color */
+
+p {
+  color: #ffffff;
+}
+
+h1 {
+  color: #ffffff;
+}
