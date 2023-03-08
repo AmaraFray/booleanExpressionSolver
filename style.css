@@ -21,6 +21,16 @@ div.flexitem {
   align-content: center;
   /* margin-top: 1rem; */
 }
+div.flexitemrow {
+  /* center children in this div */
+  display: flex;
+  flex-direction: row;
+  flex:1;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  /* margin-top: 1rem; */
+}
 
 hr {
   width: 100%;
